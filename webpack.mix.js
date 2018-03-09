@@ -13,3 +13,27 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+
+
+mix.styles([
+
+    'resources/assets/css/bootstrap.css',
+    'resources/assets/css/font-awesome.css',
+    'resources/assets/css/skdslider.css',
+    'resources/assets/css/style.css'
+
+], 'public/css/libs.css');
+
+
+mix.scripts([
+
+    'resources/assets/js/bootstrap.js',
+    'resources/assets/js/easing.js',
+    'resources/assets/js/jquery-1.11.1.min.js',
+    'resources/assets/js/minicart.min.js',
+    'resources/assets/js/move-top.js',
+    'resources/assets/js/responsiveslides.min.js',
+    'resources/assets/js/skdslider.min.js'
+
+], 'public/js/libs.js');
