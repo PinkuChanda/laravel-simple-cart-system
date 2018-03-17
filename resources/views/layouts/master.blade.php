@@ -42,16 +42,23 @@
         </div>
         <div class="agile-login">
             <ul>
-                <li><a href="registered.html"> Create Account </a></li>
-                <li><a href="login.html">Login</a></li>
+                @if (Route::has('login'))
+                        @auth
+                        <form class="" action="{{route('logout')}}" method="post">
+                            {{ csrf_field() }}
+                            <button style="background-color: #fe9126;color: #FFFFFF;border: 0px none;padding: 5px 15px; ">Logout</button>
+                        </form>
+                        @else
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}"> Create Account </a></li>
+                        @endauth
+                @endif
+
             </ul>
         </div>
         <div class="product_list_header">
-            <form action="#" method="post" class="last">
-                <input type="hidden" name="cmd" value="_cart">
-                <input type="hidden" name="display" value="1">
-                <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-            </form>
+                <a href="{{route('product.shoppingCart')}}" class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                <span style="color: #fe9126 !important;" class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''  }}</span><a>
         </div>
         <div class="clearfix"> </div>
     </div>

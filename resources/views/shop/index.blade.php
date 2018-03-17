@@ -34,11 +34,7 @@
                                                             <h4>${{$product->price}}</h4>
                                                         </div>
                                                         <div class="snipcart-details top_brand_home_details">
-                                                            <form action="#" method="post">
-                                                                <fieldset>
-                                                                    <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                                </fieldset>
-                                                            </form>
+                                                            <a href="{{route('product.addToCart', ['id' => $product->id])}}"><input type="button" value="Add to cart" class="button" /></a>
                                                         </div>
                                                     </div>
                                                 </figure>
