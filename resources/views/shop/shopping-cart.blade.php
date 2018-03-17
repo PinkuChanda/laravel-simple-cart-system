@@ -37,10 +37,10 @@
                         <th>Remove</th>
                     </tr>
                     </thead>
-
+                    @php($i = 1)
                     @foreach($products as $product)
                         <tr class="rem1">
-                            <td class="invert">1</td>
+                            <td class="invert">{{$i++}}</td>
                             <td class="invert-image"><a href="single.html"><img src="images/1.png" alt=" " class="img-responsive" /></a></td>
                             <td class="invert">
                                 <div class="quantity">
@@ -95,7 +95,7 @@
                     </ul>
                 </div>
                 <div class="checkout-right-basket">
-                    <a href="single.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
+                    <a href="{{route('checkout')}}"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Checkout</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>

@@ -26,6 +26,18 @@ Route::get('/shopping-cart', [
     'as'     => 'product.shoppingCart'
 ]);
 
+Route::get('/checkout', [
+    'uses'   => 'ProductController@getCheckout',
+    'as'     => 'checkout'
+]);
+
+
+//Route::get('/checkout', [
+//    'uses'   => 'ProductController@postCheckout',
+//    'as'     => 'checkout'
+//]);
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
+
